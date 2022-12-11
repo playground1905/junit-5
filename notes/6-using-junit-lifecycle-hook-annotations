@@ -1,0 +1,36 @@
+what JUnit does is it creates a new instance for every method run;
+- One common thing you would need is you would need to initialize stuff before the method runs and you rerun into it then our test as well you see here we are creating a new instance of MathUtils every time because you don't want to depend on a previous initialization so you want to craete a new one so you have like a clean state every time so you don't stand the risk of a previous test.
+
+-JUnit provides a "hook" it provides a mechanism for you t osay I'm gonna give you a method run this before every test please and then junit runs it before every test.
+
+Assume that you have a class multiple method. 
+- No matter how many methods you have you want that code to be initialised at the beginning of the class and 
+- No matter how many methods you have you want some code to execute at the end of the class you have. so 
+- You put those hooks over there you want sometihng to get initialized at the very beginning.
+
+Test Life cycle 
+
+Hooks types;
+
+TestClass
+-----------
+
+--------------->Initialize before anything in this class runs hook(@BeforeAll) : That Code is gonna run before any of those three methods run.
+
+---------------------->Initialize before each method hook:(@BeforeEach) initialization code that needs to run for each method you have three methods you want it executed three times at the beginning of each method and similarly 
+--testMethod1
+-----------------------> Teardown after each method hook:(@AfterEach) You can say after each method ı want to certain things to execute and again this gets executed as many methods as you have three methods it's going to get executed five times at the end of each method.
+
+
+---------------------->Initialize before each method hook:(@BeforeEach)
+--testMethod2
+-----------------------> Teardown after each method hook:@AfterEach)
+
+
+---------------------->Initialize before each method hook:(@BeforeEach)
+--testMethod3
+-----------------------> Teardown after each method hook:@AfterEach) 
+
+---------------->Tear down after all methods are done:(@AfterAll)
+
+

@@ -1,0 +1,5 @@
+Write test first, then code
+
+For examle add calculateCicleArea method in MathUtils class firt it only return 0 first,
+Than you write the test testCalculateCircleArea and then implement the calculateCicleArea method according to testCalculateCircleArea method.
+

@@ -1,0 +1,21 @@
+- There are tests which benefit from repetition, let's say you repeat the test five times there is this thing called @RepeatedTest annotation that you can stick on top of a test you want repeat it
+- you can use @RepeatedTest annotation instead of @Test annotation
+- if one of those repetition is fail test is fail. Test is successful only if all of the repetitions are successful any one of them fail the test fails.
+
+@RepeatedTest(3)
+    void testComputeCircleArea() {
+        assertEquals(314.1592653589793, mathUtils.computeCircleArea(10), "Should return right circle area.");
+    }
+    
+- how do you get hold of the repetition you do this by passing an argument here call RepetitionInfo 
+    
+   @RepeatedTest(3)
+    void testComputeCircleArea(RepetitionInfo repetitionInfo) {
+	 repetitionInfo.getCurrentRepetition();
+        assertEquals(314.1592653589793, mathUtils.computeCircleArea(10), "Should return right circle area.");
+    } 
+    
+- Every time JUnit runs your tests for every repetition it's going to pass in an object called repetition info which is going to contain information about repetition.
+
+    
+

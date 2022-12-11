@@ -1,0 +1,32 @@
+There is another mechanism that you can use to test a bunch of assertions.
+
+@Nested
+    @DisplayName("add method")
+    class AddTest{
+        @Test
+        @DisplayName("when adding two positive numbers")
+        void testAddPositive(){
+            assertEquals(2, mathUtils.add(1,1), "should return the right sum");
+        }
+
+        @Test
+        @DisplayName("when adding two negative numbers")
+        void testAddNegative(){
+            assertEquals(-1, mathUtils.add(-1,-1), "should return the right sum");
+        }
+ }
+ 
+Nested structure but what each test is doing is not very complicated it's actually very simple stuff.
+- If your test requires some code to run before preparation and all taht stuff it's fairly complicated then it makes sense to break it down like an example.
+
+- There is another way in which you can run a bunch of assertions rather like a list of assert equals or assert statements.
+- The way to do that is by using a mechanism called "assertAll"
+- assertAll is a way for you to run bunch of assertions in just one statement.
+- You can say to JUnit these are all my assertions here you go. I'm giving this all to you run it and if any one of those fail mark it as failure.
+
+
+ assertAll(
+                () -> assertEquals(4, mathUtils.multiply(2, 2)),
+                () -> assertEquals(0, mathUtils.multiply(2, 0)),
+                () -> assertEquals(-2, mathUtils.multiply(2, -1))
+        );

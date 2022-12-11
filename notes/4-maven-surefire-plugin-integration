@@ -1,0 +1,5 @@
+- Surefire plugin is a maven plugin which lets you run junit test using maven commands.
+- CICD pipeline where there is like a build process that needs to happen you need to call maven test command.
+
+
+

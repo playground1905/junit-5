@@ -1,0 +1,23 @@
+Conditional Execution
+- Conditional execution is a way for you to execute tests only on certain situations only on certain scenarios.
+- There are bunch of conditional execution annotations that come out of the box such as;
+@EnabledOnOs(OS.LINUX)
+@EnabledOnjRE(JRE.JAVA_11)
+@EnabledIf
+@EnabledIfSystemProperty
+@EnabledIfEnvironmentVariable
+
+which let you control from outside what tests you want executed and during which times
+
+Handling External Factors
+There are other ways in which you can handle external factors and that is using assumptions.
+
+assumeTrue(boolean value): Basically telling JUnit you know then you run this I am assuming that this value should be true when I'm running this test. If this assumtion is not correct hey JUnit please don't run this test because this test doesn'nt make sense in that context.
+- Similar to enable/disable but then this gives you programmatic control.
+
+boolean isServerUp = false; //hardcoded now
+assumeTrue(isServerUp);
+
+assume true that is server up and if the server up then execute this test. It assumes that certain things are true for your test to run and you want certain failures do not run the test as opposed to break the test and cause problems. You don't want the test to break you just don't run the test. This is the difference between assume and assertion.
+
+

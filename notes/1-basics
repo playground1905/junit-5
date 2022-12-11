@@ -1,0 +1,28 @@
+The point of writing automated test not so much to verify that the code works "now", the point is to verify on an ongoing basis that the code "continues to work in the future"
+
+Every Test Execution has three main steps;
+
+- Preparation
+- Provide test inputs
+- Provide expected output
+
+These three steps are different for every class that is going to be tested
+
+Junit-5 "Jupiter API" (5. gezegen JUpiter) isimli bir API'var Backward compatible değil daha eski sürümler "Vintage API" kullanıyor çalışırken
+
+eğer Jupiter de geliştirme yapılacaksa sadece iki dependency'e ihtiyacım var Jupiter aPI ve Platform Core(jupiter-engine)
+
+eğer Junit 4 veya daha eski testleri de çalıştırmak istiyorsam "Vintage API"'yide dependency oalrak eklemem gerekir.(junit-vintage-engine)
+
+IDE's (eclipse, intellij vs.) use the platform directly to run your test
+
+JUNIT Jupiter
+- New programmimg model JUnit
+- Extension model (You can write your custom annotations without no need to third party extensions.)
+- What you'ıı be primarily working with
+
+@Test
+-----
+- Masrks a method as a test
+- Informs the Junit engine what methods need to run.
+

@@ -1,0 +1,12 @@
+While executing tests on MathUtilsTest class;
+JUnit creates a new instance of MathUtilsTest
+MathUtilsTest mathUtilsTest = new MathUtilsTest and then 
+- scan annotations @Beforeeach so I'm going to run that method called the "init" before each method
+
+I'm just running test and creates a new instance runs init runs test and runs cleanup when is the beforeall and afterall running?
+- it(@beforeall) runs before the instance is created
+- after all the tests are run after the instance is terminated.
+
+@BeforeAll methods that execute even "before" the instance is created. (@BeforeAll methods must be static because it runs before instance creation)
+@AfterAll methods work all the tests are run after the instance is terminated.
+

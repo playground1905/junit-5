@@ -1,0 +1,17 @@
+Test Life Cycle
+
+Lifecycle is the process in which the test instance is created, it's managed and destroyed.
+
+Assume that you have one test class anfd this class has three test method.
+When you run the test that JUnit runs the first method, the second method and third method there is no saying what the order of these methods are gonna be though it is essentially random.
+
+JUnit has an order annotation there is an order that you can place on top of method and say I want this method run first, this method run second,
+(It is not recommended test antipattern!!)
+
+One very common trap that people fall into when they're writing tests is they create the state outside the method which is very bad.
+Let's say you have a method inside the test for example MathUtils test so I want to create some value let's say 
+
+int cachedValue = 0 in every test method ı changed its value it is not work junit 5 because; (Ordering de takibi zor problem yaşatır)
+
+JUnit creates a new class instance every time for every test run, for every method run rather, testdivide new MathUtilsTest, testadd new MathUtilsTest 
+

@@ -1,0 +1,19 @@
+Expectation vs Actual 
+- Create an instance of hte class under test.
+- Set up inputs.
+- Execute the code you want to test.
+- Verify the result is what you expect.
+
+assertEquals(espected, actual) : Asserts that expected and actual are equal.
+assertArrayequals(expectedArray, actualArray): Verifies each item in the arrays are equal in the right position.
+assertIterableEquals(expectedArray, actualArray): Verifies each item in the iterable are equal in the corresponding positions.
+assertFalse(boolean condition, String message): Assert that the supplied condition is false.
+assertNotEquals(byte unexpected, byte actual)
+assertNotNull(Object actual)
+fail() : Fails the test.
+
+There is a way check if a method throws an exception like it's supposed to throw right
+sometimes taht exception is required you want your method throw an exception when something happens.
+How do you validate it is throwing the right exception so for that you use a thing called "assertThrows"
+assertThrows(expectedExceptionType, executable, message);
+

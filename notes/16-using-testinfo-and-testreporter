@@ -1,0 +1,6 @@
+- JUnit maintains intermally test info contains information about test
+- Test reporter lets you access the log
+- testinfo and testreporter are both super handy if you want to have that kind of control over your test
+- testinfo if you want to get information about the test
+- testreporter if you want to report somethinh out.
+- If you want to access to it you can use dependency injection

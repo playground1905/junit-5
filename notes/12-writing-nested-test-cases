@@ -1,0 +1,25 @@
+Let's say you're testing add method;
+- You want to have a bunch of tests to make sure that all those inputs result in the right outputs.
+- You want to test adding with zero give you the same number, zero doesn't affect anything, adding a negative number you know decrement the number. There are a bunch of test cases that you need to run in order to verify that the add method works how do you solve this problem?
+
+You can solve this problem using nested test annotation.
+
+@Nested
+@DisplayName("add method")
+class AddTest {
+	@Test
+        @DisplayName("when adding two positive numbers")
+        void testAddPositive() {
+            assertEquals(2, mathUtils.add(1, 1), "should return the right sum");
+        }
+
+        @Test
+        @DisplayName("when adding two negative numbers")
+        void testAddNegative() {
+            assertEquals(-2, mathUtils.add(-1, -1), "should return the right sum");
+        }
+    }
+    
+- You can solve organizing problem with this solution. You can group those things together and say these are test a single thing but then each of those tests are testing for different scenarios.
+- If any of these were to fail my add method test is not working
+

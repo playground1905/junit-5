@@ -1,0 +1,8 @@
+Test Instance
+
+New instance created per test
+@TestInstance annotation provide to junit in order to tell it to make the test instance creation behave differently.
+@TestInstance(TestInstance.Lifecycle.PER_METHOD) // Default behaviour (instance gets created for each method.)
+@TestInstance(TestInstance.Lifecycle.CLASS) (there is only going to be "one" instance MathUtilsTest class no matter how many methods you have in this thing) If an instance is being created just once for the whole class @BeforeAll method can be nonstatic because it works only once.
+
+

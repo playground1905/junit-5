@@ -1,0 +1,13 @@
+- Tagging for your test is the thing that helps you with managing your tests and selectively running test depending on what you have going on 
+- Tagging let's you tag your test as the name says with certain words and then you can say okay ı want to tag my tests as important and then you have a way of running only your important test at any point of time. 
+- This is useful when you have a lot of tests or maybe have unit tests and integration tests you can say this is a unit test and run all your unit tests seperately from your integration test
+
+    @Test
+    @DisplayName("Testing add method")
+    @Tag("Math")
+    void testAdd() {
+        int expected = 2;
+        int actual = mathUtils.add(1, 1);
+        assertEquals(expected, actual, "The add method should add two numbers");
+    }
+

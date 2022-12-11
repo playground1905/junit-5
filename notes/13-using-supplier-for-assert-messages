@@ -1,0 +1,18 @@
+Not only can you pass lambdas to assertions in "assertall " you can actually pass lambdas into any assertions for the statement for the message that the test displays if the test were to fail what ı mean by that
+
+	@Test
+        @DisplayName("when adding two negative numbers")
+        void testAddNegative() {
+            int expected = -2;
+            int actual = mathUtils.add(-1,-1);
+            assertEquals(expected, actual, "should return the right sum " + expected + " but returned " + actual);
+        }
+        
+- if test fail show that message "should return the right sum " + expected + " but returned " + actual 
+- There are optimization there becous creating this string every time expensive to compute
+- We can calculate this lazy create lambda and pass it over here. Lamda is a supplier so basically it's something that returns a single value as long as you pass in a lambda which returns a string what JUnit is going to do; It is going to say hey ı know you havent given me a string but you have given me a method to execute which is going to give me a string. I'm fine with that I'm only going to execute that method if test were to fail.
+If the test passes I'm not going to execute this method. We can convert this to a lambda.
+
+assertEquals(expected, actual, () -> "should return the right sum " + expected + " but returned " + actual);
+    
+        

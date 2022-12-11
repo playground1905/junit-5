@@ -1,0 +1,4 @@
+Annotations to scale your tests
+
+@DisplayName = For visual feedback about what your method is doing. it is handy when you have alot of tests.
+@Disabled = generally using for Test Driven Development for in progress methods. It just skip the test.
